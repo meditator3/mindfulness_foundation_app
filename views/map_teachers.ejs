@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>מפת מנחי שפת הקשב</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="/app.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet"> 
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.mapboxgl-popup {
+      max-width: 200px;
+      }
+</style>
+</head>
+<body>
+<div id="map"></div>
+ 
+<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+  <h1> teacher= <%=teacher.length %></h1>
+  <h1> teacher name=<%=teacher[20].residence%></h2>
+<script>
+   
+    //pospup=["'<p>מיכה מוכו פוחו<p> <br /> <b>name </b>: אריאל '"," גחלכיעלדגחיהבסהסבה" , " fjhdksafkjdshfkjhsdkjfhsd"]
+    longlat=[];
+    
+   
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYXJpZWxndWV6IiwiYSI6ImNrcjkzM29kMDEzeHcyd2xwcTZ0bDlxaW4ifQ.IjOVjN7t8uDFcc4jcE6OOA';
+    mapboxgl.setRTLTextPlugin(
+    'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+    null,
+    true // Lazy load the plugin
+    );
+const mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+// const map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/arielguez/ckrsoo23w023f18qomvkwvpxo',
+    
+//     center: [35.005,31.418],
+//         zoom: 7
+//     });
+//location.forEach(item => console.log(location[item]));    
+location.forEach(myGeocoder);
+    
+function myGeocoder(item, index) {
+    mapboxClient.geocoding
+    .forwardGeocode({
+    query: item,
+    autocomplete: false,
+    limit: 1
+    })
+    .send()
+    .then((response) => {
+    if (
+    !response ||
+    !response.body ||
+    !response.body.features ||
+    !response.body.features.length
+    ) {
+    console.error('Invalid response:');
+    console.error(response);
+    return;
+    }
+    const feature = response.body.features[0].geometry.coordinates;
+    console.log("feature="+feature);
+    longlat[index] = feature;
+    ;
+    const popup = new mapboxgl.Popup({ offset: 25}).setHTML(pospup[index]);
+    new mapboxgl.Marker().setLngLat(longlat[index]).setPopup(popup).addTo(map);
+    
+    console.log("longlat="+longlat[0]+" ,longlat="+longlat[1])
+    
+    
+
+    })
+
+}
+
+</script>
+ 
+</body>
+</html>

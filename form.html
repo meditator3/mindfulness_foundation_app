@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="form_style.css">
+    <div class=header>
+        <h1>טופס פרטים מנחה שפת הקשב</h1>
+    </div>
+<div class="container">
+    <form action="/register" method="POST">
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">שם מלא</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="full_name" placeholder="שם מלא">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="email">email</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="email" name="email" placeholder="האימייל שלך הוא">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="phone">טלפון</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="phone" name="phone" placeholder="טלפון">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="city">אזור בארץ</label>
+        </div>
+        <div class="col-75">
+          <select id="location" name="location">
+            <option value="north">צפון</option>
+            <option value="haifa">חיפה והסביבה</option>
+            <option value="hasharon">השרון</option>
+            <option value="center">תל אביב והמרכז</option>
+            <option value="south">נגב ודרום</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="about">קצת על עצמי</label>
+        </div>
+        <div class="col-75">
+          <textarea id="about" name="about" placeholder="כתוב/כתבי משהו בקצרה על עצמך.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="residence">מקום מגורים</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="residence" name="residence" placeholder="את/ה גר ב...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="ages">גילאים אתם אני עובד</label>
+        </div>
+        <div class="col-75">
+          <input type="checkbox" id="kinder" name="kinder" placeholder="גני ילדים">
+          <label for="kinder"> גני ילדים</label>
+          <input type="checkbox" id="yesodi1" name="yesodi1" placeholder="יסודי מוקדם א-ב">
+          <label for="kinder"> יסודי מוקדם א-ב</label>
+          <input type="checkbox" id="yesodi2" name="kinder" placeholder="יסודי ג-ו">
+          <label for="kinder"> יסודי ג-ו</label>
+          <input type="checkbox" id="hativa" name="hativa" placeholder="חטיבת ביניים ">
+          <label for="kinder">  חטיבת ביניים</label>
+          <input type="checkbox" id="high_school" name="high_school" placeholder="תיכון  ">
+          <label for="kinder">   תיכון</label>
+          <input type="checkbox" id="adults" name="adults" placeholder=" מבוגרים ">
+          <label for="kinder">   מבוגרים</label>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="population">   אוכלוסיות שאני עובד/ת איתן</label>
+        </div>
+        <div class="col-75">
+          <input type="checkbox" id="no_pref" name="no_pref" placeholder=" ללא העדפה">
+          <label for="kinder">  ללא העדפה</label>
+          <input type="checkbox" id="in_danger" name="in_danger" placeholder=" נוער בסיכון">
+          <label for="in_danger">  אוכלוסיות בסיכון</label>
+          <input type="checkbox" id="ADHD" name="ADHD" placeholder=" בעיות קשב וריכוז">
+          <label for="ADHD">  בעיות קשב וריכוז</label>
+          <input type="checkbox" id="sportsmen" name="sportsmen" placeholder=" ספורטאים ">
+          <label for="ADHD">    ספורטאים</label>
+          <input type="checkbox" id="special_edu" name="special_edu" placeholder=" חינוך מיוחד ">
+          <label for="ADHD">    חינוך מיוחד</label>
+          <input type="checkbox" id="disease" name="disease" placeholder=" מתמודדים עם מחלה קשה ">
+          <label for="ADHD">     מתמודדים עם מחלה קשה</label>
+          <input type="checkbox" id="families" name="families" placeholder=" משפחות ">
+          <label for="ADHD"> משפחות</label>
+          <input type="checkbox" id="schools" name="schools" placeholder=" בתי ספר ">
+          <label for="ADHD"> בתי ספר</label>
+          <input type="checkbox" id="mechina_boarding" name="mechina_boarding" placeholder=" פנימיות ומכינות קדם צבאיות ">
+          <label for="ADHD"> פנימיות ומכינות קדם צבאיות</label>
+        </div>
+      </div>    
+      <div class="row">
+        <div class="row">
+            <div class="col-25">
+              <label for="exp"> ניסיון</label>
+            </div>
+            <div class="col-75">
+              <select id="exp" name="exp">
+                <option value="no_exp">ללא ניסיון</option>
+                <option value="months"> חודשים</option>
+                <option value="1year">שנה אחת</option>
+                <option value="2year">  שנתיים</option>
+                <option value="3year_more">   שלוש שנים ומעלה</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="work_pref">  צורת עבודה מועדפת </label>
+            </div>
+            <div class="col-75">
+              <input type="checkbox" id="front" name="front" placeholder=" פרונטלי">
+              <label for="kinder">  פרונטלי</label>
+              <input type="checkbox" id="zoom" name="zoom" placeholder="  זום">
+              <label for="kinder">   זום </label>
+              <input type="checkbox" id="small_g" name="small_g" placeholder=" קבוצה קטנה">
+              <label for="kinder"> קבוצה קטנה</label>
+              <input type="checkbox" id="big_g" name="big_g" placeholder=" קבוצה גדולה ">
+              <label for="kinder">   קבוצה גדולה</label>
+              <input type="checkbox" id="single" name="single" placeholder="פרטני  ">
+              <label for="kinder">   פרטני</label>
+        
+            </div>
+          </div> 
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+  </html>

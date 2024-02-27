@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/app.css" type="text/css">
+<h1 dir="rtl">    תוצאות חיפוש באזור <%=area %>:</h1>
+</br>
+<h3 dir="rtl"> נמצאו <%=location.length%> מנחים/ות באזורך</h3>
+<% console.log("location ="+location[0].gen_location); %>
+<a href="http://teachers.sfathakeshev.co.il:3000/search"  target="_blank"><p dir="rtl">חפש מנחים לפי אזור</p></a>
+
+
+<% for (i=0;i<location.length;i++) { %>
+  <div  dir="rtl" class="container" id="teachers_table">
+      <img src="<%=location[i].pic_url%>" style="width:80px;height:100px;"> 
+    <p> שם המנחה: <%=location[i].full_name%></p>
+    <p> טלפון : <%=location[i].phone%></p>
+    <p> אימייל: <%=location[i].email%></p>
+    <p> אזור בארץ: <%=location[i].gen_location%></p>
+    <p> על המנחה: <%=location[i].about%></p>
+    <p> מקום מגורים: <%=location[i].residence%></p>
+    <p> עבור גילאים: <%=location[i].ages%></p>
+    <p> התמחות באוכלוסיה של: <%=location[i].population%></p>
+    <p> ניסיון: <%=location[i].exp%></p>
+    <p> צורת עבודה מועדפת: <%=location[i].work_pref%></p>
+   
+  </div>
+<% } %>
+

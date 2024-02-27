@@ -1,0 +1,126 @@
+.header {
+    text-align: center;
+}
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  h1 {
+      color:blue;
+  }
+  h3 {
+      color:blue;
+  }
+a {
+    color:blue;
+    transform: scale(2.5);
+    font-size:4.5vh 3vw;
+    margin:2vh 2vw;
+}
+.a1 {
+    border: solid white 1px;
+    border-spacing: 4px;
+    color:white;
+    font-size:3vh;
+}
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+    font-size:2vh 2vw;
+}
+select {
+    font-size: 3vh;
+} 
+/* style the table for the teachers after search results */
+#teachers_table{
+    margin: 2vh 2vw;
+    background-color:rgb(24, 151, 224);
+    
+    
+}
+img {
+  border: 2px solid white;
+  margin:8px;
+}
+#teachers_table>img {
+    float: right;
+}
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size:3vh;
+   
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: solid white 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    font-size:3.5vh;
+  }
+  
+  input[type=checkbox] {
+        transform: scale(2.5);
+      font-size:3vh;
+      border-radius:4px;
+      margin:1vh 1vw;
+      
+  }
+  input[type=checkbox].label {
+      float:right;
+  }
+  /* Style the container */
+  .container {
+      
+    border-radius: 5px;
+    background-color: rgb(24, 151, 224);
+    padding: 2vw 2vh;
+  }
+  
+  /* Floating column for labels: 25% width */
+  .col-25 {
+       
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    margin-left: 6px;
+    background-color: rgb(24, 151, 224);
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+      padding:1vh ;
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+    margin-left: 6px;
+    background-color: rgb(24, 151, 224);
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+      padding:1vh 1vw;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+      
+    }
+}

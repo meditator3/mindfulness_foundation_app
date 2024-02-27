@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/app.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet"> 
+<h1 dir="rtl"> רשימת מנחי שפת קשב</h1>
+
+<a  href="http://teachers.sfathakeshev.co.il:3000/search"  target="_blank"><p dir="rtl"> חפש מנחים לפי אזור</p><a>
+<br>
+    <a  href="http://teachers.sfathakeshev.co.il:3000"  target="_blank"><p dir="rtl"> עמוד הבית </p></a>
+ <h3 dir="rtl"> סה"כ נמצאו <%=teacher.length %> מנחות/ים</h3>   
+<% for (i=0;i<teacher.length;i++) { %>
+  <div dir="rtl" class="container">
+    <img src="<%=teacher[i].pic_url%>" style="width:80px;height:100px;">  
+    <p>שם המנחה: <%=teacher[i].full_name%></p>
+    <p>טלפון: <%=teacher[i].phone%></p>
+    <p>אימייל: <%=teacher[i].email%></p>
+    <p>אזור בארץ: <%=teacher[i].gen_location%></p>
+    <p>על המנחה: <%=teacher[i].about%></p>
+    <p>מקום מגורים: <%=teacher[i].residence%></p>
+    <p>עבור גילאים: <%=teacher[i].ages%></p>
+    <p>עבור אוכלוסיה של: <%=teacher[i].population%></p>
+    <p>ניסיון: <%=teacher[i].exp%></p>
+    <p>צורת עבודה מועדפת: <%=teacher[i].work_pref%></p>
+    
+  </div>
+  <div>
+      <p>-----------------------------------------------------</p>
+  </div>
+<% } %>
+

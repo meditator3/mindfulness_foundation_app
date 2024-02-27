@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/app.css" type="text/css">
+<h1 dir="rtl">פרטי המנחה:<%= teacher.full_name %></h1>
+<div dir="rtl" class="container">
+    <img src="<%=teacher.pic_url%>" style="width:80px;height:100px;">
+    <p>שם המנחה: <%=teacher.full_name%></p>
+    <p>אימייל: <%=teacher.email%></p>
+    <p>אזור בארץ: <%=teacher.gen_location%></p>
+    <p>על המנחה: <%=teacher.about%></p>
+    <p>מקום מגורים: <%=teacher.residence%></p>
+    <p>עבור גילאים: <%=teacher.ages%></p>
+    <p>עבור אוכלוסיה של: <%=teacher.population%></p>
+    <p>ניסיון: <%=teacher.exp%></p>
+    <p>צורת עבדוה מועדפת: <%=teacher.work_pref%></p>
+    <p>-----------------------------------------------------</p>
+  </div>

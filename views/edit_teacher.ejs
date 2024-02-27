@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="/app.css" type="text/css">
+<h1 dir="rtl"> ערוך רשומת המנחה: <%= teacher.full_name%></h1>
+
+<form action="/edit_teacher" method="POST"> <div   class="container">
+    
+    <img src="<%=teacher.pic_url%>" style="width:80px;height:100px;">
+     <p> תמונה<input type="text" id="pic_url" name="pic_url" placeholder="הוסף קישור לתמונה - מגוגל דרייב בלבד!"> </p>
+    <p> שם מלא<input type="text" id="fname" name="full_name" placeholder="<%=teacher.full_name%>"></p>
+   טלפון<input type="number" id="phone" name="phone" placeholder="<%=teacher.phone%>"></p>
+     <p>אימייל<input type="text" id="email" name="email" placeholder=" <%=teacher.email%>"> </p>
+    <p>אזור בארץ: <%=teacher.gen_location%>
+    <div class="col-75"  dir="rtl">
+          
+            
+            <input  type="checkbox" id="gen_location" name="gen_location[]" value="הצפון" placeholder="הצפון   " >
+            <label for="north">  <  הצפון  </label>
+            <input type="checkbox" id="gen_location" name="gen_location[]"  value="חיפה והסביבה" placeholder="   חיפה והסביבה   ">
+            <label for="haifa">   < חיפה והסביבה    </label>
+            <input type="checkbox" id="gen_location" name="gen_location[]"  value="השרון" placeholder="השרון   "> 
+            <label for="hasharon"> < השרון    </label>
+            <input type="checkbox" id="gen_location" name="gen_location[]"  value="תל אביב והמרכז" placeholder="   תל אביב והמרכז  ">
+            <label for="tel-aviv">   < תל אביב והמרכז   </label>
+             <input type="checkbox" id="gen_location" name="gen_location[]"  value="אזור ירושלים" placeholder="   אזור ירושלים   ">
+              <label for="jeruslaem">  < אזור ירושלים   </label>
+            <input type="checkbox" id="gen_location" name="gen_location[]"  value="נגב ודרום" placeholder="  נגב ודרום   ">
+            <label for="negev"> <   נגב ודרום    </label>
+          </select>
+        </div></p>
+    <p> על המנחה:<div class="col-75">
+          <textarea id="about" name="about" placeholder="<%=teacher.about%>" style="height:200px"></textarea>
+        </div> </p>
+    <p>מקום מגורים:<div class="col-75">
+          <input type="text" id="residence" name="residence" placeholder="<%=teacher.residence%>">
+        </div></p>
+    <p>עבור גילאים: <%=teacher.ages%>
+    <div class="col-75"  dir="rtl">
+          <input type="checkbox" id="kinder" name="ages[]" value="גני ילדים" placeholder="גני ילדים">
+          <label for="kinder"> גני ילדים</label>
+          <input type="checkbox" id="yesodi1" name="ages[]" value ="יסודי מוקדם א-ב" placeholder="יסודי מוקדם א-ב">
+          <label for="yesodi1"> יסודי מוקדם א-ב</label>
+          <input type="checkbox" id="yesodi2" name="ages[]" value="יסודי ג-ו"  placeholder="יסודי ג-ו">
+          <label for="yesodi2"> יסודי ג-ו</label>
+          <input type="checkbox" id="hativa" name="ages[]" value=" חטיבת ביניים" placeholder="חטיבת ביניים ">
+          <label for="hativa">  חטיבת ביניים</label>
+          <input type="checkbox" id="high_school" name="ages[]" value="תיכון" placeholder="תיכון  ">
+          <label for="high_school">   תיכון</label>
+          <input type="checkbox" id="adults" name="ages[]" value=" מבוגרים" placeholder=" מבוגרים ">
+          <label for="adults">   מבוגרים</label>
+
+        </div></p>
+    <p>התמחות באוכלוסיה של: <%=teacher.population%>
+     <div class="col-75"  dir="rtl">
+          <input type="checkbox" id="no_pref" name="population[]" value="ללא העדפה" placeholder=" ללא העדפה">
+          <label for="no_pref">  ללא העדפה</label>
+          <input type="checkbox" id="in_danger" name="population[]" value="אוכלוסיות בסיכון" placeholder=" נוער בסיכון">
+          <label for="in_danger">  אוכלוסיות בסיכון</label>
+          <input type="checkbox" id="ADHD" name="population[]" value="בעיות קשב וריכוז" placeholder=" בעיות קשב וריכוז">
+          <label for="ADHD">  בעיות קשב וריכוז</label>
+          <input type="checkbox" id="sportsmen" name="population[]" value=" ספורטאים" placeholder=" ספורטאים ">
+          <label for="sportsmen">    ספורטאים</label></br>
+          <input type="checkbox" id="special_edu" name="population[]" value=" חינוך מיוחד" placeholder=" חינוך מיוחד ">
+          <label for="special_edu">    חינוך מיוחד</label>
+          <input type="checkbox" id="disease" name="population[]" value="מתמודדים עם מחלה קשה" placeholder=" מתמודדים עם מחלה קשה ">
+          <label for="disease">     מתמודדים עם מחלה קשה</label>
+          <input type="checkbox" id="families" name="population[]" value="משפחות" placeholder=" משפחות ">
+          <label for="families"> משפחות</label>
+          <input type="checkbox" id="schools" name="population[]" value=" בתי ספר" placeholder=" בתי ספר ">
+          <label for="schools"> בתי ספר</label>
+          <input type="checkbox" id="mechina_boarding" name="population[]" value="פנימיות ומכינות קדם צבאיות" placeholder=" פנימיות ומכינות קדם צבאיות ">
+          <label for="machina_boarding"> פנימיות ומכינות קדם צבאיות</label>
+        </div></p>
+    <p>ניסיון: <%=teacher.exp%>
+    <div class="col-75">
+              <select id="exp" name="exp[]">
+                 <option value="<%=teacher.exp%>"><%=teacher.exp%></option>
+                <option value="ללא ניסיון">ללא ניסיון</option>
+                <option value="חודשים"> חודשים</option>
+                <option value="שנה אחת">שנה אחת</option>
+                <option value="שנתיים">  שנתיים</option>
+                <option value="שלוש שנים עד חמש שנים">   שלוש שנים עד חמש שנים</option>
+                <option value="חמש שנים ומעלה"> חמש שנים ומעלה</option>
+              </select>
+            </div></p>
+    <p>צורת עבודה  מועדפת: <%=teacher.work_pref%>
+    <div class="col-75"  dir="rtl">
+              <input type="checkbox" id="front" name="work_pref[]" value="פרונטלי" placeholder=" פרונטלי">
+              <label for="front">  פרונטלי</label>
+              <input type="checkbox" id="zoom" name="work_pref[]" value="זום" placeholder="  זום">
+              <label for="zoom">   זום </label>
+              <input type="checkbox" id="small_g" name="work_pref[]" value="קבוצה קטנה" placeholder=" קבוצה קטנה">
+              <label for="small_g"> קבוצה קטנה</label>
+              <input type="checkbox" id="big_g" name="work_pref[]" value="קבוצה גדולה" placeholder=" קבוצה גדולה ">
+              <label for="big_g">   קבוצה גדולה</label>
+              <input type="checkbox" id="single" name="work_pref[]" value="פרטני" placeholder="פרטני  ">
+              <label for="single">   פרטני</label>
+        
+            </div></p>
+    <p>-----------------------------------------------------</p>
+  </div>
+<h2 dir="rtl">שגר טופס</h2>
+<p dir="rtl"><input  type="submit" value="שגר טופס" ></p>
+</form>

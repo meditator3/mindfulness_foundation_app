@@ -1,0 +1,26 @@
+
+<link rel="stylesheet" href="/app.css" type="text/css">
+<h1 dir="rtl">חיפוש מורים לפי אזורים</h1>
+
+<div class="container">
+    <form action="/search" method="POST">
+    <div class="row">
+        <div class="col-25">
+          <label for="gen_location">אזור בארץ</label>
+        </div>
+        <div class="col-75">
+          <select id="gen_location" name="gen_location[]">
+           <option value="צפון">צפון</option>
+            <option value="חיפה והסביבה">חיפה והסביבה</option>
+            <option value="השרון">השרון</option>
+            <option value="תל אביב והמרכז">תל אביב והמרכז</option>
+            <option value="אזור ירושלים">אזור ירושלים</option>
+            <option value="נגב ודרום">נגב ודרום</option>
+          </select>
+        </div>
+      </div>
+     <input type="submit" value="הפעל חיפוש">
+</form>
+</div>
+
+<a href="http://teachers.sfathakeshev.co.il:3000">חזרה לעמוד מנחים</a>

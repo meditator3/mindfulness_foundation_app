@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/app.css" type="text/css">
+<h1> חפש מנחה לערוך</h1>
+
+<form action="search_teacher" method="POST">
+    
+    <select name="full_name" id="full_name" >
+        <% for (i=0;i<teacher.length;i++) { %>
+        
+        <option>
+           
+            <%=teacher[i].full_name%>
+           
+            </option> 
+            
+    <% } %>
+    </select> 
+    
+    <input type="submit" value="חפש מנחה לערוך">
+   
+</form>
